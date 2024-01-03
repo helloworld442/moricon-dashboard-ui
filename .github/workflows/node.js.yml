@@ -1,22 +1,18 @@
-name: Vue build
-
+name: React build
 on:
-  push:
+  push: # master Branch에서 push 이벤트가 일어났을 때만 실행
     branches:
       - main
 
 jobs:
   build:
     runs-on: ubuntu-20.04
-
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v2
+      - name: Checkout source code. # 레포지토리 체크아웃
+        uses: actions/checkout@master
 
-      - name: Install Dependencies
+      - name: Install Dependencies # 의존 파일 설치
         run: npm install
 
-      - name: Build
-        run: |
-          npm run build
-          echo 'Build process completed.'
+      - name: Build # React Build
+        run: CI='false' npm run build
