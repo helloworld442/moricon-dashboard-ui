@@ -2,7 +2,6 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   resolve: {
@@ -92,6 +91,5 @@ module.exports = {
         ].join("|")})$`
       )
     ),
-    new BundleAnalyzerPlugin(),
   ],
 };
