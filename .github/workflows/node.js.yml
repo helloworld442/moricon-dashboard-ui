@@ -3,7 +3,7 @@ name: NodeJS with Webpack
 on:
   # step2 라는 브랜치에 커밋을 push할 때 마다 실행되도록 합니다.
   push:
-    branches: [step2]
+    branches: main
 
 jobs:
   # deploy 라는 job 입니다.
