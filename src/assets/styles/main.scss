@@ -9,3 +9,11 @@ body {
   margin: 0;
   font-family: "Noto Sans KR";
 }
+
+#nprogress .bar {
+  background-color: $main-color-dark;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px $main-color-dark, 0 0 5px $main-color-dark;
+}
