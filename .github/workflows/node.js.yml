@@ -27,6 +27,7 @@ jobs:
 
       - name: Cloudfront invalidation
         run: |
+          echo ${{ secrets.AWS_DISTRIBUTION_ID }}
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} \
             --paths "/*"
