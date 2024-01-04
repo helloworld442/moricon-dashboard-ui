@@ -29,7 +29,7 @@ import User from "../../assets/icons/User";
 
 .header-nav {
   width: 100%;
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
