@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <nav class="header-nav">
-      <h4 class="nav-logo">별무리</h4>
+      <h4 class="nav-logo">별무리asf</h4>
 
       <ul class="nav-menu">
         <li class="nav-item">
