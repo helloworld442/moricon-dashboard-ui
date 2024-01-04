@@ -38,7 +38,7 @@
 
 .header-nav {
   width: 1078px;
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
