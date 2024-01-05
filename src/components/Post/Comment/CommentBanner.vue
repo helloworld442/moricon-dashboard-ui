@@ -1,4 +1,5 @@
 <template>
+  <h2 class="comment-list-title">답변 <b>0</b></h2>
   <div class="comment-banner">
     <div class="info">
       <h3 class="title">
@@ -24,11 +25,27 @@ const { onToggleActive } = inject("activeModule");
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/styles/main.scss";
+
+.comment-list-title {
+  margin-top: 36px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: 550;
+  font-family: "Noto Sans KR";
+  color: #333;
+
+  b {
+    margin-left: 4px;
+    color: $main-color-dark;
+  }
+}
+
 .comment-banner {
   width: 100%;
   height: 130px;
   padding: 24px;
-  margin: 36px 0;
+  margin: 18px 0;
   box-sizing: border-box;
   border-radius: 4px;
   background: #e3e3e3;
