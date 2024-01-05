@@ -1,4 +1,5 @@
 <template>
+  {{ toast }}
   <form class="write-form-box" @submit.prevent="create">
     <WriteInput label="제목" v-model:title="title" :error="titleError" />
     <WriteTextArea
@@ -16,14 +17,13 @@
 import { computed, ref } from "vue";
 import WriteInput from "./@common/WriteInput";
 import WriteTextArea from "./@common/WriteTextArea";
-import { useRouter } from "vue-router";
 import useMutation from "../../composable/useMutation";
 import { createPost } from "../../apis/posts";
+import { LoginErrorToast, WriteSuccessToast } from "../../utils/sweetAlert2";
 
 const title = ref("");
 const content = ref("");
 
-const router = useRouter();
 const mutation = useMutation(createPost);
 
 const titleError = computed(() => {
@@ -42,15 +42,20 @@ const disabled = computed(() => {
   return Boolean(titleError.value || contentError.value);
 });
 
-async function create() {
-  const req = {
-    title: title.value,
-    content: content.value,
-  };
+const toast = computed(() => {
+  if (mutation.status.value.isSuccess) {
+    return WriteSuccessToast();
+  }
 
-  mutation.mutate(req);
+  if (mutation.status.value.isError) {
+    return LoginErrorToast();
+  }
 
-  router.push("/posts/all");
+  return;
+});
+
+function create() {
+  mutation.mutate({ title: title.value, content: content.value });
 }
 </script>
 

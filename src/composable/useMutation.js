@@ -1,7 +1,7 @@
 import { ref } from "vue";
 
 export default function useMutation(promiseCreator) {
-  const status = ref({ isSuccess: false, isError: false, error: null });
+  const status = ref({ isSuccess: false, isError: false });
 
   const mutate = async (data) => {
     try {
@@ -9,7 +9,6 @@ export default function useMutation(promiseCreator) {
       status.value.isSuccess = true;
     } catch (error) {
       status.value.isError = true;
-      status.value.error = error;
     }
   };
 

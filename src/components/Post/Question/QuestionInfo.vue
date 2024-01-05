@@ -3,7 +3,7 @@
     <h5 class="info-box-date">2022.12.05</h5>
     <div class="info-box-buttons">
       <span class="info-box-heart"><Heart /> 저도 궁금해요 </span>
-      <span class="info-box-button" @click.prevent="onToggleButton">
+      <span class="info-box-button" @click.prevent="onToggleActive">
         <Pen /> 답변하기
       </span>
     </div>
@@ -12,15 +12,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { inject } from "vue";
 import Heart from "../../../assets/icons/Heart";
 import QuestionForm from "./QuestionForm";
 
-const active = ref(false);
-
-function onToggleButton() {
-  active.value = !active.value;
-}
+const { active, onToggleActive } = inject("activeModule");
 </script>
 
 <style lang="scss" scoped>

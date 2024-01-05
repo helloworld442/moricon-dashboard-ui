@@ -3,7 +3,7 @@
     <QuestionTitle :title="post?.title" />
     <QuestionContent :content="post?.content" />
     <QuestionInfo />
-    <CommentList />
+    <CommentBanner />
   </section>
 </template>
 
@@ -11,14 +11,22 @@
 import QuestionTitle from "./Question/QuestionTitle";
 import QuestionContent from "./Question/QuestionContent";
 import QuestionInfo from "./Question/QuestionInfo";
+import CommentBanner from "./Comment/CommentBanner";
 import CommentList from "./Comment/CommentList";
+
+import { onMounted, provide } from "vue";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
+
 import useFetch from "../../composable/useFetch";
+import useToggle from "../../composable/useToggle";
+
 import { getPost } from "../../apis/posts";
-import { onMounted } from "vue";
 
 const { params } = useRoute();
 const { data: post, error, loader } = useFetch(getPost);
+const { active, onToggleActive } = useToggle();
+
+provide("activeModule", { active, onToggleActive });
 
 onMounted(() => {
   loader(params.postId);
