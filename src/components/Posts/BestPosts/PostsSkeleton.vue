@@ -54,6 +54,7 @@
   position: relative;
   left: 4px;
   top: -3px;
+  height: 100%;
   margin-right: 16px;
   font-size: 2rem;
   font-weight: 300;
@@ -71,6 +72,7 @@
 }
 
 .skeleton-item-content {
+  display: inline-block;
   width: 80%;
   height: 48px;
   border-radius: 2px;
@@ -80,6 +82,7 @@
 .skeleton-item-user {
   position: absolute;
   bottom: 30px;
+  left: 0;
   display: inline-block;
   width: 26px;
   height: 26px;
