@@ -1,16 +1,17 @@
 import { ref } from "vue";
 
 export default function useMutation(promiseCreator) {
-  const status = ref({ isSuccess: false, isError: false });
+  const isSuccess = ref(false);
+  const isError = ref(false);
 
   const mutate = async (data) => {
     try {
       await promiseCreator(data);
-      status.value.isSuccess = true;
+      isSuccess.value = true;
     } catch (error) {
-      status.value.isError = true;
+      isError.value = true;
     }
   };
 
-  return { status, mutate };
+  return { isSuccess, isError, mutate };
 }

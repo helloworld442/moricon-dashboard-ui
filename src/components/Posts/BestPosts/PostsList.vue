@@ -1,5 +1,6 @@
 <template>
-  <ul class="best-posts-list">
+  <PostsBanner v-if="isPostsLength" />
+  <ul class="best-posts-list" v-else>
     <li class="best-posts-item" v-for="(post, index) in posts">
       <PostsItem v-bind="post" :index="index" />
     </li>
@@ -7,9 +8,12 @@
 </template>
 
 <script setup>
+import PostsBanner from "../@common/PostsBanner";
 import PostsItem from "./PostsItem";
 
 const props = defineProps(["posts"]);
+
+const isPostsLength = !props.posts.length;
 </script>
 
 <style lang="scss" scoped>
@@ -30,18 +34,6 @@ const props = defineProps(["posts"]);
 
   @include tablet {
     width: 100%;
-  }
-}
-
-@keyframes fadeInOutAnimation {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 </style>

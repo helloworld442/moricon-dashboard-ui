@@ -43,11 +43,11 @@ const disabled = computed(() => {
 });
 
 const toast = computed(() => {
-  if (mutation.status.value.isSuccess) {
+  if (mutation.isSuccess.value) {
     return WriteSuccessToast();
   }
 
-  if (mutation.status.value.isError) {
+  if (mutation.isError.value) {
     return LoginErrorToast();
   }
 

@@ -105,7 +105,7 @@ onUnmounted(() => {
   border-radius: 4px;
 
   @include tablet {
-    height: 220px;
+    height: 200px;
   }
 }
 
@@ -138,7 +138,7 @@ onUnmounted(() => {
   padding-bottom: 12px;
 
   @include tablet {
-    margin-top: 10px;
+    margin-top: 2px;
     font-size: 1.35rem;
   }
 }

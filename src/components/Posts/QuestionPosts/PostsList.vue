@@ -1,5 +1,6 @@
 <template>
-  <ul class="question-posts-list">
+  <PostsBanner v-if="isPostsLength" />
+  <ul class="question-posts-list" v-else>
     <li class="question-posts-item" v-for="post in posts">
       <PostsItem v-bind="post" />
     </li>
@@ -7,9 +8,12 @@
 </template>
 
 <script setup>
+import PostsBanner from "../@common/PostsBanner";
 import PostsItem from "./PostsItem";
 
 const props = defineProps(["posts"]);
+
+const isPostsLength = !props.posts.length;
 </script>
 
 <style lang="scss" scoped>
