@@ -2,9 +2,7 @@
   <RouterView />
 </template>
 
-<script>
-export default {};
-</script>
+<script></script>
 
 <style lang="scss">
 @import "./assets/styles/main.scss";

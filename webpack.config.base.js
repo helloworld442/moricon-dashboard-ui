@@ -78,18 +78,5 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.ContextReplacementPlugin(
-      /highlight\.js\/lib\/languages$/,
-      new RegExp(
-        `^./(${[
-          "javascript",
-          "java",
-          "python",
-          "css",
-          "html",
-          "plaintext",
-        ].join("|")})$`
-      )
-    ),
   ],
 };

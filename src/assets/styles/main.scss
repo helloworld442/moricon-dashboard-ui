@@ -1,24 +1,11 @@
 @import "./media.scss";
 @import "./reset.scss";
-@import "./color.scss";
 @import "./font.scss";
 @import "./mark.scss";
+@import "./color.scss";
 
 body {
   padding: 0;
   margin: 0;
   font-family: "Noto Sans KR";
-}
-
-#nprogress .bar {
-  background-color: $main-color-light !important;
-}
-
-#nprogress .peg {
-  box-shadow: 0 0 10px $main-color-light, 0 0 5px $main-color-light !important;
-}
-
-#nprogress .spinner-icon {
-  border-top-color: $main-color-light !important;
-  border-left-color: $main-color-light !important;
 }
