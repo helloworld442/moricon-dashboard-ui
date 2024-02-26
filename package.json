@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.79",
     "axios": "^1.6.2",
-    "marked": "^11.1.0",
     "nprogress": "^0.2.0",
     "vue": "^3.2.36",
     "vue-router": "^4.0.13",

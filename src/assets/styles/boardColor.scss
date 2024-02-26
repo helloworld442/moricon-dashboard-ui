@@ -1,0 +1,63 @@
+.status-item.red {
+  background: rgb(217, 67, 78, 0.5);
+
+  p {
+    color: rgb(167, 52, 62);
+
+    b {
+      color: rgb(167, 52, 62, 0.6);
+    }
+  }
+
+  .numbering {
+    background: rgb(217, 67, 78);
+  }
+}
+
+.status-item.green {
+  background: rgb(116, 210, 187, 0.5);
+
+  p {
+    color: rgb(65, 139, 118);
+
+    b {
+      color: rgb(65, 139, 118, 0.6);
+    }
+  }
+
+  .numbering {
+    background: rgb(116, 210, 187);
+  }
+}
+
+.status-item.blue {
+  background: rgb(111, 148, 246, 0.5);
+
+  p {
+    color: rgb(98, 123, 192);
+
+    b {
+      color: rgb(98, 123, 192, 0.6);
+    }
+  }
+
+  .numbering {
+    background: rgb(111, 148, 246);
+  }
+}
+
+.status-item.gray {
+  background: rgb(111, 118, 132, 0.5);
+
+  p {
+    color: rgb(103, 105, 115);
+
+    b {
+      color: rgb(103, 105, 115, 0.6);
+    }
+  }
+
+  .numbering {
+    background: rgb(111, 118, 132);
+  }
+}
