@@ -1,74 +1,95 @@
 <template>
   <section class="error-board-status">
-    <label class="status-label">Error Device Count</label>
-    <div class="status-progress">
-      <span class="progress-inner" />
+    <div class="status-graph" ref="progressBar" />
+    <div class="status-board">
+      <label class="board-label">ERROR SENSOR</label>
+      <p class="board-number">21<b>/ 80</b></p>
     </div>
-    <p class="status-count">5 <b>/ 6</b></p>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+import * as d3 from "d3";
+
+const progressBar = ref(null);
+
+onMounted(() => {
+  const width = 42;
+  const height = 250;
+
+  const svg = d3
+    .select(progressBar.value)
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  svg
+    .append("rect")
+    .attr("width", width)
+    .attr("height", 0.6 * height)
+    .attr("y", height * (1 - 0.6))
+    .attr("fill", "#f24c00");
+});
+</script>
 
 <style lang="scss" scoped>
 @import "../../../assets/styles/main.scss";
 
 .error-board-status {
-  display: inline-block;
   position: relative;
-  width: 220px;
+  width: 205px;
   height: 100%;
+
+  border-right: 1px solid $border-color-0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-.status-label {
-  font-size: 0.775rem;
-  font-weight: 600;
-  font-family: "Montserrat", "Noto Sans KR";
-  color: #868686;
-}
-
-.status-progress {
+.status-graph {
   position: relative;
-  margin-top: 12px;
-  width: 36px;
-  height: 100px;
+  width: 42px;
+  height: 100%;
+
   border-radius: 24px;
-  background: $background-color-1;
+  overflow: hidden;
 
-  .progress-inner {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  margin-right: 16px;
 
-    display: inline-block;
-
-    width: 100%;
-    height: 80%;
-
-    border-bottom-right-radius: 24px;
-    border-bottom-left-radius: 24px;
-    background: $background-color-2;
-  }
+  background: rgb(233, 240, 251);
 }
 
-.status-count {
-  position: absolute;
-  top: 24px;
-  left: 60px;
+.status-board {
+  margin-top: 4px;
 
-  padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-  font-size: 4.5rem;
-  font-weight: 400;
-  font-family: "Montserrat", "Noto Sans KR";
-  color: #333;
-
-  b {
-    font-size: 1.05rem;
-    font-weight: 400;
+  .board-label {
+    font-size: 0.715rem;
+    font-weight: 600;
     font-family: "Montserrat", "Noto Sans KR";
-    color: #868686;
+    color: #555;
+  }
+
+  .board-number {
+    padding: 0;
+    margin: 0;
+
+    font-size: 3.8rem;
+    font-weight: 450;
+    font-family: "Montserrat", "Noto Sans KR";
+    color: #333;
+
+    b {
+      font-size: 0.8rem;
+      font-weight: 450;
+      font-family: "Montserrat", "Noto Sans KR";
+      color: #555;
+    }
   }
 }
 </style>

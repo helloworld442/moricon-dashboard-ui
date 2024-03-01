@@ -1,11 +1,11 @@
 <template>
   <section class="circle-board-status">
-    <label class="status-label">SENSORS</label>
+    <label class="status-label">CHEKCKING</label>
     <div ref="chart" class="status-chart"></div>
     <div class="status-chart-desc">
-      <p><b style="background: #4059ad" />수위 센서</p>
-      <p><b style="background: #6b9ac4" />방위계</p>
-      <p><b style="background: #97d8c4" />하중</p>
+      <p><b style="background: #f24c00" />미점검 센서</p>
+      <p><b style="background: #fc7a1e" />대기 센서</p>
+      <p><b style="background: #f9c784" />점검예정 센서</p>
     </div>
   </section>
 </template>
@@ -18,9 +18,9 @@ const chart = ref(null);
 
 onMounted(() => {
   const data = [
-    { label: "Item 1", value: 5, color: "#4059ad" },
-    { label: "Item 2", value: 3, color: "#6b9ac4" },
-    { label: "Item 3", value: 4, color: "#97d8c4" },
+    { label: "Item 1", value: 20, color: "#f24c00" },
+    { label: "Item 2", value: 30, color: "#fc7a1e" },
+    { label: "Item 3", value: 50, color: "#f9c784" },
   ];
 
   const width = 175;
@@ -91,13 +91,13 @@ onMounted(() => {
 }
 
 .status-chart {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .status-chart-desc {
   position: absolute;
   bottom: 48px;
-  right: -24px;
+  right: -40px;
 
   display: flex;
   flex-direction: column;

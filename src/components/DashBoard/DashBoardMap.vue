@@ -27,7 +27,7 @@ import Plus from "../../assets/icons/Plus";
 
 import mapOptions from "../../utils/mapOptions";
 
-const zoom = ref(14);
+const zoom = ref(15);
 
 function onPlusZoom() {
   zoom.value++;
@@ -54,7 +54,7 @@ function onMinusZoom() {
 
 .dashboard-zoom {
   position: absolute;
-  top: 100px;
+  bottom: 36px;
   right: 36px;
 
   display: flex;
