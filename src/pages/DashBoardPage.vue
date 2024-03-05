@@ -1,16 +1,14 @@
 <template>
   <DashBoardLayout>
     <DashBoardHeader />
-    <DashBoardMap />
     <DashBoardBoard />
   </DashBoardLayout>
 </template>
 
 <script setup>
-import DashBoardLayout from "../layout/DashBoardLayout";
-import DashBoardMap from "../components/DashBoard/DashBoardMap";
-import DashBoardBoard from "../components/DashBoard/DashBoardBoard";
 import DashBoardHeader from "../components/DashBoard/DashBoardHeader";
+import DashBoardBoard from "../components/DashBoard/DashBoardBoard";
+import DashBoardLayout from "../layout/DashBoardLayout";
 </script>
 
 <style lang="scss" scoped></style>

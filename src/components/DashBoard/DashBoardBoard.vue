@@ -1,120 +1,57 @@
 <template>
-  <div class="dashboard-board" :class="classObject">
-    <section class="board-section-status">
-      <CheckBoardStatusUI />
-      <WorkBoardStatusUI />
-    </section>
-
-    <section class="board-section-scene">
-      <ErrorBoardStatusUI />
-    </section>
-
-    <button
-      class="board-move-button"
-      :class="classObject"
-      @click="onToggleButton"
-    >
-      <ArrowRight />
-    </button>
-  </div>
+  <section class="dashboard-board">
+    <div class="board-section-front">
+      <ListBoardUI />
+      <SafeBoardUI />
+    </div>
+    <div class="board-section-back">
+      <SensorBoardUI />
+      <CheckBoardUI />
+      <WeatherBoardUI />
+    </div>
+  </section>
 </template>
 
 <script setup>
-import ErrorBoardStatusUI from "./BoardUI/ErrorBoardStatusUI";
-import CheckBoardStatusUI from "./BoardUI/CheckBoardStatusUI";
-import WorkBoardStatusUI from "./BoardUI/WorkBoardStatusUI";
-import ArrowRight from "../../assets/icons/ArrowRight";
-import { computed, ref } from "vue";
-
-const active = ref(false);
-
-const classObject = computed(() => {
-  return { disabled: !active.value };
-});
-
-function onToggleButton() {
-  active.value = !active.value;
-}
+import ListBoardUI from "./ListBoard/BoardTemplate";
+import SafeBoardUI from "./BoardUI/SafeBoardUI";
+import SensorBoardUI from "./SensorBoard/BoardTemplate";
+import CheckBoardUI from "./CheckBoard/BoardTemplate";
+import WeatherBoardUI from "./WeatherBoard/BoardTemplate";
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/styles/main.scss";
 
 .dashboard-board {
-  position: absolute;
-  top: 50%;
-  right: 36px;
+  width: calc(100% - 230px);
+  height: 100%;
 
-  width: 635px;
-  height: 724px;
-  padding: 18px 30px;
-  box-sizing: border-box;
-  border: 1px solid $border-color-0;
-  border-radius: 5px;
-  background: #fff;
-  transform: translateY(-50%);
-  transition: all 1s ease-in-out;
-  z-index: 100;
-
-  &.disabled {
-    transform: translate(660px, -50%);
-  }
-}
-
-.board-section-status {
-  position: relative;
-  width: 100%;
-  height: 230px;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 96px;
-
-  border-bottom: 1px solid $border-color-0;
-}
-
-.board-section-scene {
-  position: relative;
-  width: 100%;
-  height: 250px;
-
-  margin-top: 20px;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 30px;
-}
-
-.board-move-button {
-  position: absolute;
-  top: 50%;
-  left: -40px;
-  transform: translateY(-50%);
-
-  padding: 20px 6px;
+  padding: 30px 20px;
   box-sizing: border-box;
 
-  border: 1px solid $border-color-0;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  overflow-y: scroll;
 
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+}
 
-  cursor: pointer;
+.board-section-front {
+  display: flex;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  gap: 18px;
+}
 
-  svg {
-    width: 26px;
-    height: 26px;
-    transform: rotate(-180deg);
-    transition: all 1s ease-in-out;
-  }
-
-  &.disabled {
-    svg {
-      transform: rotate(0deg);
-    }
-  }
+.board-section-back {
+  display: flex;
+  width: 100%;
+  height: 324px;
+  display: flex;
+  gap: 18px;
 }
 </style>
