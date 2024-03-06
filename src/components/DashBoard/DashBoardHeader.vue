@@ -1,123 +1,126 @@
 <template>
   <header class="dashboard-header">
     <nav class="header-nav">
-      <div class="nav-logo"><Logo /> <b>SAFE SITE PRO</b></div>
+      <div class="nav-logo">
+        <Logo />
+      </div>
       <ul class="nav-menu">
-        <li class="nav-item active"><Home /> <b>DashBoard</b></li>
-        <li class="nav-item"><Monitor /> <b>Monitoring</b></li>
-        <li class="nav-item"><Process /> <b>Processing</b></li>
-        <li class="nav-item"><Report /> <b>Result Report</b></li>
+        <li class="nav-item">
+          <RouterLink to="/dashboard/list">
+            <List />
+            <b>목록</b>
+          </RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/dashboard/link">
+            <Monitor />
+            <b>모니터링</b>
+          </RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/dashboard/link">
+            <Process />
+            <b>프로세스</b>
+          </RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/dashboard/link">
+            <Report />
+            <b>보고서</b>
+          </RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/dashboard/link">
+            <Setting />
+            <b>설정</b>
+          </RouterLink>
+        </li>
       </ul>
-      <div class="nav-user"></div>
     </nav>
   </header>
 </template>
 
 <script setup>
+import List from "../../assets/icons/List";
 import Logo from "../../assets/icons/Logo";
-import Home from "../../assets/icons/Home";
+import Report from "../../assets/icons/Report";
 import Monitor from "../../assets/icons/Monitor";
 import Process from "../../assets/icons/Process";
-import Report from "../../assets/icons/Report";
+import Setting from "../../assets/icons/Setting";
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/styles/main.scss";
 
 .dashboard-header {
-  width: 224px;
+  flex: 1 0 85px;
   height: 100%;
 
-  padding: 36px 20px;
-  padding-right: 4px;
+  padding: 24px 0;
   box-sizing: border-box;
+
+  border-right: 1px solid $border-color-0;
 }
 
 .header-nav {
+  position: relative;
   width: 100%;
   height: 100%;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 54px;
+  align-items: center;
+  gap: 24px;
 }
 
 .nav-logo {
-  padding: 0 12px;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 8px;
-
   svg {
-    width: 24px;
-    height: 24px;
-    fill: #454b6a;
-  }
-
-  b {
-    margin-top: 2px;
-
-    font-size: 0.95rem;
-    font-weight: 800;
-    font-family: "Montserrot", sans-serif;
-    color: #454b6a;
+    width: 30px;
+    height: 30px;
+    fill: #5e6ad7;
   }
 }
 
 .nav-menu {
-  width: 100%;
-
   padding: 0;
   margin: 0;
   list-style: none;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  gap: 40px;
 }
 
 .nav-item {
   width: 100%;
+  height: 100%;
 
-  padding: 15px 14px;
-  box-sizing: border-box;
+  a {
+    width: 100%;
+    height: 100%;
 
-  border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 8px;
+    text-decoration: none;
+  }
 
   svg {
-    width: 17px;
-    height: 17px;
-    stroke: #454b6a;
-    stroke-width: 2;
+    width: 28px;
+    height: 28px;
+    stroke: #444;
   }
-
   b {
-    font-size: 0.775rem;
-    font-weight: 450;
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 0.7rem;
+    font-weight: 400;
     font-family: "Noto Sans KR";
-    color: #454b6a;
-  }
-
-  &.active {
-    svg {
-      stroke: #f4f5f8;
-    }
-
-    b {
-      color: #f4f5f8;
-    }
-
-    background: #454b6a;
+    color: #666;
   }
 }
 </style>

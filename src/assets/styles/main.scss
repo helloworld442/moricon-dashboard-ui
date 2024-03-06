@@ -1,3 +1,4 @@
+@import "./map.scss";
 @import "./media.scss";
 @import "./font.scss";
 @import "./color.scss";
@@ -8,6 +9,4 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Noto Sans KR";
-
-  background-color: #f3f3f6;
 }

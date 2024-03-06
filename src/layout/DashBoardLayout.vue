@@ -10,12 +10,8 @@
 @import "../assets/styles/main.scss";
 
 .dashboard-layout {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 1440px;
+  position: relative;
+  width: 100vw;
   height: 100vh;
 
   display: flex;
