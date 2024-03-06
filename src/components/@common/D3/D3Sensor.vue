@@ -10,7 +10,7 @@ const chart = ref(null);
 
 onMounted(() => {
   const data = [10, 2, 4];
-  const colors = ["#e76f51", "#f4a261", "#2a9d8f"];
+  const colors = ["#d9434e", "#f4a261", "#2a9d8f"];
 
   const width = 108;
   const height = 108;
