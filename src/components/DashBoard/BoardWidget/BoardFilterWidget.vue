@@ -2,7 +2,7 @@
   <ul class="board-filter-widget" :class="activeObject">
     <li class="widget-item">
       <span class="item-icon" style="background: #d9434e" />
-      <p class="item-desc">위험 프로젝트d</p>
+      <p class="item-desc">위험 프로젝트</p>
     </li>
 
     <li class="widget-item">
