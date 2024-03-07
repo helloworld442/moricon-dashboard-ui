@@ -17,7 +17,7 @@ import BoardListItem from "./BoardListItem";
 
 .board-list-core {
   width: 100%;
-  height: 625px;
+  height: 623px;
 
   padding: 8px 0;
   margin: 0;
