@@ -46,10 +46,10 @@ const activeObject = computed(() => {
   align-items: center;
   gap: 12px;
 
-  opacity: 1;
+  display: inline-block;
 
   &.disabled {
-    opacity: 0;
+    display: none;
   }
 }
 
