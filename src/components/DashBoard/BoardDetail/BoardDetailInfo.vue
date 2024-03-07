@@ -55,6 +55,7 @@
 .content-title {
   padding: 0;
   margin: 0;
+  margin-top: 2px;
 
   font-size: 1.25rem;
   font-weight: 650;
