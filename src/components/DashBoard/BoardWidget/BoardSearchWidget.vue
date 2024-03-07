@@ -38,7 +38,7 @@ import Search from "../../../assets/icons/Search";
   outline: none;
 
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 450;
   font-family: "Noto Sans KR";
   color: #444;
 }

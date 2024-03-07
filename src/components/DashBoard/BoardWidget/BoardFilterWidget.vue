@@ -81,7 +81,7 @@ const activeObject = computed(() => {
     margin-bottom: 2px;
 
     font-size: 0.775rem;
-    font-weight: 500;
+    font-weight: 450;
     font-family: "Noto Sans KR";
     color: #444;
   }
