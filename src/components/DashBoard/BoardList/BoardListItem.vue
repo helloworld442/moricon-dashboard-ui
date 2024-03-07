@@ -1,7 +1,9 @@
 <template>
   <li class="board-list-item">
     <div class="item-status"><span /> <b>위험 상태</b></div>
-    <h3 class="item-title">{{ title }}</h3>
+    <RouterLink class="item-title" to="/dashboard/list/3">{{
+      title
+    }}</RouterLink>
     <h5 class="item-structure">당진공사</h5>
     <div class="item-participant"><b>관리부서</b> R&BD 팀</div>
     <div class="item-picture">
@@ -70,6 +72,7 @@ const props = defineProps(["title"]);
   font-weight: 500;
   font-family: "Noto Sans KR";
   color: #444;
+  text-decoration: none;
 
   cursor: pointer;
 
