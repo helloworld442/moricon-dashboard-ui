@@ -46,8 +46,6 @@ const activeObject = computed(() => {
   align-items: center;
   gap: 12px;
 
-  display: inline-block;
-
   &.disabled {
     display: none;
   }
